@@ -1,25 +1,38 @@
-package laboratorio2;
+package laboratorio3;
 
 public class Entrenador {
 
+    private int idEntrenador;
     private String nombre;
     private String tipo;
+    static int contadorEntrenadores;
 
-    public Entrenador() { // Punto 2
-    }
+    public Entrenador(String nombre, String tipo) {//punto 2
+        contadorEntrenadores++;
+        idEntrenador = contadorEntrenadores;
 
-    public Entrenador(String nombre, String tipo) { // Punto 3
         this.nombre = nombre;
         this.tipo = tipo;
     }
 
-    public void setEntrenador(String nombre, String tipo) {
+    public String getNombre() {//punto 3
+        return nombre;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public void setTipo(String tipo) {
         this.tipo = tipo;
     }
 
-    public void indicarEntrenamiento() { // Punto 4
-        System.out.println("Mi nombre es " + this.nombre + " y soy entrenador de " + this.tipo);
+    public static int getContadorEntrenadores() {
+        return contadorEntrenadores;
     }
 
 }
